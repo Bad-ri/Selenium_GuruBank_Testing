@@ -19,7 +19,7 @@ public class DataRetriever {
         return String.valueOf(sheet.getRow(row).getCell(cell));
     }
     public void ExcelSetup (int sheet_number){
-        String path = System.getProperty("user.dir") + "/src/main/resources/Data/Excel/Data.xlsx" ;
+        String path = System.getProperty("user.dir") + "\\src\\main\\resources\\Data\\Excel\\Data.xlsx" ;
         try{
             input_file = new FileInputStream(path);
             workbook = new XSSFWorkbook(input_file);

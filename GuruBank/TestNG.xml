@@ -1,0 +1,7 @@
+<suite name="smoke">
+    <test name="first_smoke">
+        <classes>
+            <class name="TestCase.TC_Login"> </class>
+        </classes>
+    </test>
+</suite>

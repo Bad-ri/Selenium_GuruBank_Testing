@@ -8,6 +8,7 @@ public class Login {
     public Login (WebDriver driver){
         this.driver = driver ;
     }
+    String wait_locator = "//input[@type=\"submit\"]" ;
     By submit_button = By.xpath("//input[@type=\"submit\"]");
     By username_field = By.xpath("//input[@name=\"uid\"]");
     By password_field = By.xpath("//input[@name=\"password\"]");
@@ -19,5 +20,8 @@ public class Login {
     }
     public void ClickSubmit(){
         driver.findElement(submit_button).click();
+    }
+    public String getLocator(){
+        return wait_locator;
     }
 }
