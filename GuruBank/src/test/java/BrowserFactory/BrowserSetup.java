@@ -3,6 +3,8 @@ package BrowserFactory;
 import Data.DataGenerator;
 import Data.DataRetriever;
 import Pages.Login;
+import Utilities.Log;
+import Utilities.ScreenShot;
 import Utilities.Wait;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -12,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.ILoggerFactory;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -27,8 +30,10 @@ public class BrowserSetup {
     public Wait wait ;
     public DataRetriever data;
     public DataGenerator fake_data ;
-    public Logger log ;
-    public FileHandler file ;
+    public Log log_obj;
+    public Logger log;
+//    public Logger log ;
+//    public FileHandler file ;
 
     @BeforeMethod
     public void BrowserOpen(){
@@ -46,7 +51,6 @@ public class BrowserSetup {
         driver = new ChromeDriver(options);
         driver.get("https://demo.guru99.com/V4/index.php");
         objectSetup();
-        logSetup();
         log.info("website opened");
     }
     public void objectSetup(){
@@ -54,28 +58,22 @@ public class BrowserSetup {
         wait = new Wait(driver);
         data = new DataRetriever(1);
         fake_data = new DataGenerator();
-        log = Logger.getAnonymousLogger();
-    }
-    public void logSetup(){
-        try{
-            file = new FileHandler("C:\\Users\\Badri\\Documents\\GitHub\\Selenium_GuruBank_Testing\\GuruBank\\src\\test\\Artifacts\\logs.log",true);
-            file.setFormatter(new SimpleFormatter());
-            log.addHandler(file);
-            //log.info("--------------------------------RUN---------------------------------------");
-        }catch (IOException e){
-            log.severe("file not found");
-        }
-
-    }
-    public void logTerminate (){
-        log.removeHandler(file);
-        file.close();
+        log_obj = new Log();
+        log_obj.logSetup();
+        log = log_obj.returnLog();
     }
 
     @AfterMethod
-    public void BrowserTerminate(){
-        driver.quit();
+    public void BrowserTerminate(ITestResult result){
+
+            // Check if the test failed or was skipped
+            if (result.getStatus() == ITestResult.FAILURE || result.getStatus() == ITestResult.SKIP) {
+                ScreenShot screen = new ScreenShot();
+                screen.captureScreenshot(driver,result.getName() + ".png");
+            }
+
+            driver.quit();
         log.info("website closed");
-        logTerminate();
+        log_obj.logTerminate();
     }
 }

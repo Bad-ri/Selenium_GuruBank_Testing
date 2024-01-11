@@ -1,0 +1,38 @@
+Jan 11, 2024 6:55:36 PM BrowserFactory.BrowserSetup BrowserOpen
+INFO: website opened
+Jan 11, 2024 6:55:40 PM TestCase.TC_Login ValidLogin
+INFO: Logged in successfully
+Jan 11, 2024 6:55:40 PM BrowserFactory.BrowserSetup BrowserTerminate
+INFO: website closed
+Jan 11, 2024 7:06:06 PM BrowserFactory.BrowserSetup BrowserOpen
+INFO: website opened
+Jan 11, 2024 7:06:09 PM TestCase.TC_Login ValidLogin
+INFO: Logged in successfully
+Jan 11, 2024 7:06:09 PM BrowserFactory.BrowserSetup BrowserTerminate
+INFO: website closed
+Jan 11, 2024 7:21:28 PM BrowserFactory.BrowserSetup BrowserOpen
+INFO: website opened
+Jan 11, 2024 7:21:31 PM TestCase.TC_Login ValidLogin
+INFO: Logged in successfully
+Jan 11, 2024 7:21:31 PM BrowserFactory.BrowserSetup BrowserTerminate
+INFO: website closed
+Jan 11, 2024 7:23:09 PM BrowserFactory.BrowserSetup BrowserOpen
+INFO: website opened
+Jan 11, 2024 7:23:13 PM TestCase.TC_Login ValidLogin
+INFO: Logged in successfully
+Jan 11, 2024 7:23:33 PM BrowserFactory.BrowserSetup BrowserTerminate
+INFO: website closed
+Jan 11, 2024 7:23:45 PM BrowserFactory.BrowserSetup BrowserOpen
+INFO: website opened
+Jan 11, 2024 7:23:49 PM TestCase.TC_Login ValidLogin
+INFO: Logged in successfully
+Jan 11, 2024 7:26:41 PM BrowserFactory.BrowserSetup BrowserOpen
+INFO: website opened
+Jan 11, 2024 7:26:44 PM BrowserFactory.BrowserSetup BrowserTerminate
+INFO: website closed
+Jan 11, 2024 7:26:47 PM BrowserFactory.BrowserSetup BrowserOpen
+INFO: website opened
+Jan 11, 2024 7:26:47 PM TestCase.TC_Login inValidLogin
+INFO: Unsuccessfully login
+Jan 11, 2024 7:26:47 PM BrowserFactory.BrowserSetup BrowserTerminate
+INFO: website closed

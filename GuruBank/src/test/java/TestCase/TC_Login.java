@@ -1,6 +1,7 @@
 package TestCase;
 
 import BrowserFactory.BrowserSetup;
+import Utilities.ScreenShot;
 import org.openqa.selenium.Alert;
 import org.testng.Assert;
 import org.testng.annotations.Test;
